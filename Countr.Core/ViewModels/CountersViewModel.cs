@@ -2,9 +2,10 @@
 using System.Threading.Tasks;
 using Countr.Core.Models;
 using Countr.Core.Services;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.Commands;
 
 namespace Countr.Core.ViewModels
 {

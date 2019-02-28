@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Countr.Core.Models;
 using Countr.Core.Services;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 
 namespace Countr.Core.ViewModels
 {
@@ -27,7 +28,7 @@ namespace Countr.Core.ViewModels
         async Task IncrementCounter()
         {
             await service.IncrementCounter(counter);
-            RaisePropertyChanged(() => Count);
+            await RaisePropertyChanged(() => Count);
         }
 
         public IMvxAsyncCommand DeleteCommand { get; }

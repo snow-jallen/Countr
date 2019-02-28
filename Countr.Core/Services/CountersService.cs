@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Countr.Core.Models;
 using Countr.Core.Repositories;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 
 namespace Countr.Core.Services
 {

@@ -4,7 +4,7 @@ using Countr.Core.Models;
 using Countr.Core.Repositories;
 using Countr.Core.Services;
 using Moq;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using NUnit.Framework;
 
 namespace Countr.Core.Tests.Services

@@ -5,8 +5,9 @@ using Countr.Core.Models;
 using Countr.Core.Services;
 using Countr.Core.ViewModels;
 using Moq;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Plugins.Messenger;
+using MvvmCross.Navigation;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
 using NUnit.Framework;
 
 namespace Countr.Core.Tests.ViewModels
@@ -71,10 +72,10 @@ namespace Countr.Core.Tests.ViewModels
         {
             // Act                                                             
             await viewModel.ShowAddNewCounterCommand.ExecuteAsync();
-            // Assert                                                          
-            navigationService.Verify(n => n.Navigate(typeof(CounterViewModel),
-                                                     It.IsAny<Counter>(),
-                                                     null));
+            System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken);
+            IMvxBundle presentationBundle = null;
+            // Assert                                                    
+            navigationService.Verify(n => n.Navigate<CounterViewModel, Counter>(It.IsAny<Counter>(), presentationBundle, cancellationToken));
         }
     }
 }

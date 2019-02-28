@@ -3,7 +3,7 @@ using Countr.Core.Models;
 using Countr.Core.Services;
 using Countr.Core.ViewModels;
 using Moq;
-using MvvmCross.Core.Navigation;
+using MvvmCross.Navigation;
 using NUnit.Framework;
 
 namespace Countr.Core.Tests.ViewModels
@@ -110,7 +110,8 @@ namespace Countr.Core.Tests.ViewModels
             await viewModel.SaveCommand.ExecuteAsync();
             // Assert
             countersService.Verify(c => c.AddNewCounter("A Counter"));
-            navigationService.Verify(n => n.Close(viewModel));
+            System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken);
+            navigationService.Verify(n => n.Close(viewModel, cancellationToken));
         }
 
         [Test]
@@ -123,7 +124,8 @@ namespace Countr.Core.Tests.ViewModels
             viewModel.CancelCommand.Execute();
             // Assert
             countersService.Verify(c => c.AddNewCounter(It.IsAny<string>()), Times.Never());
-            navigationService.Verify(n => n.Close(viewModel));
+            System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken);
+            navigationService.Verify(n => n.Close(viewModel, cancellationToken));
         }
     }
 }

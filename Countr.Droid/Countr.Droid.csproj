@@ -41,48 +41,39 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Android.Support.Animated.Vector.Drawable" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.Annotations" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.Compat" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.Fragment" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.Media.Compat" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.Transition" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.Vector.Drawable" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Build.Download" Version="0.4.7" />
+    <PackageReference Include="Xamarin.Android.Support.Animated.Vector.Drawable" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Annotations" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Compat" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Fragment" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Media.Compat" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Transition" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Vector.Drawable" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Build.Download" Version="0.4.11" />
     <PackageReference Include="PCLStorage">
       <Version>1.0.2</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross">
-      <Version>5.2.1</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Binding">
-      <Version>5.2.1</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Core">
-      <Version>5.2.1</Version>
+      <Version>6.2.3</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Droid.Support.Core.UI">
-      <Version>5.2.1</Version>
+      <Version>6.2.3</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Droid.Support.Fragment">
-      <Version>5.2.1</Version>
+      <Version>6.2.3</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Droid.Support.V7.AppCompat">
-      <Version>5.2.1</Version>
+      <Version>6.2.3</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Droid.Support.V7.RecyclerView">
-      <Version>5.2.1</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Platform">
-      <Version>5.2.1</Version>
+      <Version>6.2.3</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.Messenger">
-      <Version>5.2.1</Version>
+      <Version>6.2.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -100,7 +91,9 @@
       <Name>Countr.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Bootstrap\" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
@@ -138,16 +131,14 @@
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
-    <Compile Include="Setup.cs" />
+    <Compile Include="MainApplication.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Views\CountersView.cs" />
     <Compile Include="Views\CounterView.cs" />
     <Compile Include="Views\SwipeItemTouchHelperCallback.cs" />
-    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />

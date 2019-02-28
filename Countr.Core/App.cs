@@ -1,8 +1,10 @@
-using MvvmCross.Platform.IoC;
+using Countr.Core.ViewModels;
+using MvvmCross.IoC;
+using MvvmCross.ViewModels;
 
 namespace Countr.Core
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvxApplication
     {
         public override void Initialize()
         {
@@ -15,8 +17,8 @@ namespace Countr.Core
                 .EndingWith("Repository")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-
-            RegisterNavigationServiceAppStart<ViewModels.CountersViewModel>();
+            
+            RegisterAppStart<CountersViewModel>();
         }
     }
 }
