@@ -66,16 +66,5 @@ namespace Countr.Core.Tests.ViewModels
             // Assert
             countersService.Verify(s => s.GetAllCounters());
         }
-
-        [Test]
-        public async Task ShowAddNewCounterCommand_ShowsCounterViewModel()
-        {
-            // Act                                                             
-            await viewModel.ShowAddNewCounterCommand.ExecuteAsync();
-            System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken);
-            IMvxBundle presentationBundle = null;
-            // Assert                                                    
-            navigationService.Verify(n => n.Navigate<CounterViewModel, Counter>(It.IsAny<Counter>(), presentationBundle, cancellationToken));
-        }
     }
 }
